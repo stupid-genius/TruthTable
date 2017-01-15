@@ -1,0 +1,18 @@
+{
+	"rules": {
+		"no-extend-native": 0,
+		"no-redeclare": 0,
+	    "no-unused-vars": 0,
+		"space-infix-ops": 0,
+	},
+	"globals": {
+		"$": true,
+		"assert": true,
+		"TokenScanner": true,
+		"ExpressionOperator": true,
+		"ExpressionOperand": true,
+		"toPostfix": true,
+		"parsePostfix": true,
+		"treeToString": true
+	}
+}
