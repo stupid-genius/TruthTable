@@ -65,7 +65,8 @@
             var syntaxTree = parsePostfix(toPostfix(testExp));
             var curNode = syntaxTree;
             var depth = 0;
-            while(true){
+            var fixme = true;
+            while(fixme){
                 if(curNode.getLeft()!==undefined){
                     curNode = curNode.getLeft();
                     ++depth;
@@ -86,7 +87,7 @@
         });
         it('should be able to evaluate the tree', function(){
             var termCount = expTree.getNumTerms();
-            for(var i=Math.pow(2,termCount)-1;i>=0;--i){
+            for(var i=Math.pow(2, termCount)-1; i>=0; --i){
                 console.log(expTree.evaluate(i));
             }
         });

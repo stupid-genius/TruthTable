@@ -34,26 +34,26 @@ function ExpressionOperator(operator){
 
 	node.evaluate = function(subExpressions){
 		var lex = {
-			'!':'!(##left##)',
-			'&':'(##left##&&##right##)',
-			'|':'(##left##||##right##)',
-			'^':'!!(##left##^##right##)',
-			'?':'(!##left##||##right##)'
+			'!': '!(##left##)',
+			'&': '(##left##&&##right##)',
+			'|': '(##left##||##right##)',
+			'^': '!!(##left##^##right##)',
+			'?': '(!##left##||##right##)'
 		};
 		var left = node.getLeft().evaluate(subExpressions).peek();
 		var right = node.getRight()?node.getRight().evaluate(subExpressions).peek():undefined;
-		var exp = conjugate(left, node.getData(), right , lex);
+		var exp = conjugate(left, node.getData(), right, lex);
 		var val = eval(exp);
 		subExpressions.push(val);
 		return subExpressions;
 	};
 	node.toString = function(subExpressions){
 		var lex = {
-			'!':'&not;##left##',
-			'&':'(##left##&and;##right##)',
-			'|':'(##left##&or;##right##)',
-			'^':'(##left##&oplus;##right##)',
-			'?':'(##left##&rarr;##right##)'
+			'!': '&not;##left##',
+			'&': '(##left##&and;##right##)',
+			'|': '(##left##&or;##right##)',
+			'^': '(##left##&oplus;##right##)',
+			'?': '(##left##&rarr;##right##)'
 		};
 		var left = node.getLeft().toString(subExpressions).peek();
 		var right = node.getRight()?node.getRight().toString(subExpressions).peek():undefined;

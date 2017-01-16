@@ -26,7 +26,7 @@ $(document).ready(function(){
 			$('#inputField').animate({
 				height: 50
 			});
-			$('#inputField').data('height',50);
+			$('#inputField').data('height', 50);
 			truthtable.generateTable($('#expression').val());
 			break;
 		}
