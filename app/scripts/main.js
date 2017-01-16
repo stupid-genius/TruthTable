@@ -15,8 +15,6 @@
 
 $(document).ready(function(){
 	$(window).resize(function(){
-		$('#truthtable').width($(document).width());
-		$('#truthtable').height($(document).height());
 		$('#inputField').height($('#inputField').data('height')||$(window).height());
 	});
 	$(window).resize();

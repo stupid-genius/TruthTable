@@ -24,6 +24,7 @@ body {
 .vcenter > div > div{
     margin: 0 auto;
 }
+/*https://github.com/mleibman/SlickGrid/issues/742#issuecomment-261523196*/
 .slickgrid,
 .slickgrid *,
 .slick-header-column,
@@ -33,9 +34,13 @@ body {
     -webkit-box-sizing: content-box;
     -ms-box-sizing: content-box;
 }
+.slick-viewport {
+    overflow-x: hidden !important;
+}
 
 #truthtable{
     margin: 0 auto;
+    text-align: center;
 }
 #inputField{
     position: fixed;

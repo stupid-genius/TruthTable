@@ -11,7 +11,8 @@
 				return {
 					id: field,
 					name: e,
-					field: field
+					field: field,
+					minWidth: 50
 				};
 			});
 			var data = [];
@@ -25,11 +26,21 @@
             }
 
 			var opts = {
-				forceFitColumns: true,
+				autoHeight: true,
 				enableColumnReorder: false,
-				enableCellNavigation: true
 			};
 			truthtable = new Slick.Grid(this, data, cols, opts);
+
+			var magicNumber = 41;
+			var tableWidth = 0;
+			$('span.slick-column-name').map(function(i){
+				var headerWidth = $(this).width();
+				tableWidth += cols[i].width = headerWidth+magicNumber;
+				console.log(cols[i].width);
+			});
+			truthtable.setColumns(cols);
+			console.log('table', tableWidth);
+			$('#truthtable').width(tableWidth);
 		};
 
 		return this;
