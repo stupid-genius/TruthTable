@@ -53,12 +53,14 @@ body {
 
 #truthtable{
     margin: 0 auto;
+	margin-bottom: 100px;
     text-align: center;
 }
 #inputField{
     position: fixed;
     bottom: 20px;
     width: 100%;
+	z-index: 1;
 }
 #inputLabel{
     font-weight: bold;
