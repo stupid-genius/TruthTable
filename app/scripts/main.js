@@ -2,8 +2,6 @@
 'use strict';
 
 /* TODO
-- add title (Jumbotron?)
-- grid styling
 - allow sorting?
 - improve tests
 - maybe read exp from URL query
@@ -18,7 +16,8 @@ $(document).ready(function(){
 		$('#inputField').height($('#inputField').data('height')||$(window).height());
 	});
 	$(window).resize();
-	var truthtable = $('#truthtable').truthtable();
+	var table = $('#truthtable');
+	var truthtable = table.truthtable();
 	$('#inputField').keypress(function(e){
 		switch(e.which){
 		case 13:
@@ -28,6 +27,10 @@ $(document).ready(function(){
 			});
 			$('#inputField').data('height', 50);
 			truthtable.generateTable($('#expression').val());
+			table.css({
+				border: '1px solid'
+			});
+			$('#title').html('Truth table for '+truthtable.getExpression());
 			break;
 		}
 	});

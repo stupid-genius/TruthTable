@@ -24,6 +24,19 @@ body {
 .vcenter > div > div{
     margin: 0 auto;
 }
+#tableContainer{
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+#tableContainer > div{
+	display: table-cell;
+	vertical-align: middle;
+}
+#tableContainer > div > div{
+	text-align: center;
+}
 /*https://github.com/mleibman/SlickGrid/issues/742#issuecomment-261523196*/
 .slickgrid,
 .slickgrid *,
